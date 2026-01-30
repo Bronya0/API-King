@@ -1,0 +1,29 @@
+version: '3'
+
+includes:
+  common: ./build/Taskfile.yml
+  windows: ./build/windows/Taskfile.yml
+  darwin: ./build/darwin/Taskfile.yml
+
+vars:
+  APP_NAME: "API-King"
+  BIN_DIR: "bin"
+  VITE_PORT: '9245'
+  VERSION: "{{.GITHUB_REF_NAME}}"  # 引用环境变量 GITHUB_REF_NAME
+
+tasks:
+  build:
+    cmds:
+      - task: "{{OS}}:build"
+
+  package:
+    cmds:
+      - task: "{{OS}}:package"
+
+  run:
+    cmds:
+      - task: "{{OS}}:run"
+
+  dev:
+    cmds:
+      - task: "{{OS}}:dev"

@@ -1,0 +1,26 @@
+build/bin
+node_modules
+app/frontend/dist/
+app/frontend/wailsjs/
+app/build/bin/
+app/build/windows/icon.ico
+frontend/package.json.md5
+.vscode
+.idea
+.task
+
+*.syso
+
+icons.iconset/
+
+bindings/
+
+# gemini-cli settings
+.gemini/
+bin/
+# GitHub App credentials
+gha-creds-*.json
+*.db
+*.exe
+.DS_Store
+app/app
